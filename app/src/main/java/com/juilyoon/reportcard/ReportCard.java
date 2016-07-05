@@ -53,6 +53,15 @@ public class ReportCard {
         return semester;
     }
 
+    public Course getCourse(String courseName) {
+        for (int i = 0; i < courseList.size(); i++) {
+            if (courseList.get(i).getCourseName().equals(courseName)) {
+                return courseList.get(i);
+            }
+        }
+        return null;
+    }
+
     public ArrayList<Course> getCourseList() {
         return courseList;
     }
