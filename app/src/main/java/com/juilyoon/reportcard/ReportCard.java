@@ -95,6 +95,29 @@ public class ReportCard {
         return false;
     }
 
+    /**
+     * Replaces the course specified with new course.
+     *
+     * @param course Updated course
+     * @return boolean: true if course is replaced, false otherwise
+     */
+    private boolean replaceCourse(Course course) {
+        for (int i = 0; i < courseList.size(); i++) {
+            if (courseList.get(i).getCourseName().equals(course.getCourseName())) {
+                courseList.set(i, course);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void updateCourseGrade(String courseName, int newGrade) {
+        Course course = getCourse(courseName);
+        int position = courseList.indexOf(course);
+        course.setGradePercent(newGrade);
+        courseList.set(position, course);
+    }
+
     public int getOveralAverage() {
         int total = 0;
         for (int i=0; i < courseList.size(); i++) {
