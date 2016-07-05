@@ -71,9 +71,20 @@ public class ReportCard {
     }
 
     /**
-     * #TODO: Allow updating of internal courses
+     * Removes the first course with a name matching the string.
+     *
+     * @param courseName It is trivial to get the list of courses with getListOfCourses()
+     * @return boolean: true if course is removed, false otherwise
      */
-//    public void updateCourse(Str)
+    public boolean removeCourse(String courseName) {
+        for (int i = 0; i < courseList.size(); i++) {
+            if (courseList.get(i).getCourseName().equals(courseName)) {
+                courseList.remove(i);
+                return true;
+            }
+        }
+        return false;
+    }
 
     public int getOveralAverage() {
         int total = 0;
@@ -107,5 +118,17 @@ public class ReportCard {
         this.absences = absences;
     }
 
-    //#TODO: toString
+    @Override
+    public String toString() {
+        return "ReportCard{" +
+                "student='" + student + '\'' +
+                ", date='" + date + '\'' +
+                ", gradeYear=" + gradeYear +
+                ", semester=" + semester +
+                ", courseList=" + getListOfCourses() +
+                ", homeroomTeacher='" + homeroomTeacher + '\'' +
+                ", comments='" + comments + '\'' +
+                ", absences=" + absences +
+                '}';
+    }
 }
