@@ -53,4 +53,15 @@ public class Course {
     public boolean isPass() {
         return (gradePercent >= 50);
     }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "courseName='" + courseName + '\'' +
+                ", gradeYear=" + gradeYear +
+                ", teacher='" + teacher + '\'' +
+                ", gradePercent=" + gradePercent +
+                ", notes='" + notes + '\'' +
+                '}';
+    }
 }
