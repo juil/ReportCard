@@ -57,9 +57,23 @@ public class ReportCard {
         return courseList;
     }
 
+    /** A more human-readable way to get the list of courses. */
+    public String[] getListOfCourses() {
+        String[] list = new String[courseList.size()];
+        for (int i = 0; i < courseList.size(); i++) {
+            list[i] = courseList.get(i).getCourseName();
+        }
+        return list;
+    }
+
     public void addCourse(Course course) {
         courseList.add(course);
     }
+
+    /**
+     * #TODO: Allow updating of internal courses
+     */
+//    public void updateCourse(Str)
 
     public int getOveralAverage() {
         int total = 0;
@@ -92,4 +106,6 @@ public class ReportCard {
     public void setAbsences(int absences) {
         this.absences = absences;
     }
+
+    //#TODO: toString
 }
